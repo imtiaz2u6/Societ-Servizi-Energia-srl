@@ -1,0 +1,64 @@
+<?php
+include('login.php'); // Includes Login Script
+if(isset($_SESSION['login_user'])){
+header("location: profile.php"); // Redirecting To Profile Page
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Form in PHP with Session</title>
+
+ <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link href="style.css" rel="stylesheet" type="text/css"> 
+<body>
+<div id="login">
+<h2>Accedi ai - Società Servizi Energia srl
+</h2>	
+<form action="" method="post">
+<label>Utente :</label>
+<input id="name" name="utente" placeholder="utente" type="text">
+<label>Password :</label>
+<input id="password" name="password" placeholder="**********" type="password"><br><br>
+
+<button type="button" class="btn btn-primary btn-block" onclick="myFunction()">Login</button>
+
+<br><br>
+
+
+
+<!-- Or let Bootstrap automatically handle the layout -->
+<div class="row">
+  <div class="col-sm-4">     <a href="ForgetPassword.html" class="text-decoration-none">Dimentica la tua password</a>
+ </div>
+  <div class="col-sm-4"><a href="RegistrationForm.html" class="text-decoration-none">Registrati
+	</a>
+</div>
+  <div class="col-sm-4"><a href="index.html" class="text-decoration-none">Home
+	</a></div>
+</div>
+
+
+<script>
+function myFunction() {
+  location.replace("AdminPage.html")
+}
+</script>
+
+
+</div>
+
+
+
+
+
+
+
+<span><?php echo $error; ?></span>
+
+</form>
+</div>
+</body>
+</html>
